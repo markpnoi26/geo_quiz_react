@@ -1,9 +1,20 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { shallow } from 'enzyme'
 import App from './App';
+import Main from './containers/Main'
+import ScoreBoard from './containers/ScoreBoard'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("Makes sure the App renders the correct Components", () => {
+  it('renders Main Container Component', () => {
+    const component = shallow(<App />);
+
+    expect(component.contains(<Main />)).toBe(true)
+  });
+
+  it('renders Score Board Container Component',() => {
+    const component = shallow(<App />)
+
+    expect(component.contains(<ScoreBoard />)).toBe(true)
+  })
+
+})
