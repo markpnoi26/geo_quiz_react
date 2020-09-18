@@ -5,7 +5,7 @@ const ScoreBoardContainer = props => {
 
 
     return (
-        <div className="score-board">
+        <div className="score-board-container">
             I am a scoreboard
         </div>
     )
